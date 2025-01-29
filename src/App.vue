@@ -249,7 +249,10 @@ const getMinusIndex = (hands1, hands2) => {
   if (hands2[0] == hands2[1]) {
     const strongerHand = getStrongerHand(hands2[0])
 
-    if (hands1[0] == strongerHand || hands1[0] == hands2[0]) return 1
+    if (hands1[0] == strongerHand) return 1
+    if (hands1[1] == strongerHand) return 0
+    
+    if (hands1[0] == hands2[0]) return 1
     return 0
   }
 
